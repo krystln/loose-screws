@@ -168,3 +168,7 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+.addItem_btn {
+  @apply bg-transparent hover:bg-black text-black font-semibold hover:text-white py-1 px-4 border border-black hover:border-transparent rounded
+}
