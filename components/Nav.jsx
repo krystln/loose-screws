@@ -3,10 +3,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import { signIn } from 'next-auth/react'
 
 
 const Nav = () => {
-    const isUserLoggedIn = true;
+    const isUserLoggedIn = false;
 
     const [dropDownMenu, setDropDownMenu] = useState(false);
 
@@ -48,6 +49,7 @@ const Nav = () => {
                         <button
                             type="button"
                             className='black_btn'
+                            onClick={() => signIn()}
                         >
                             Sign In
                         </button>
