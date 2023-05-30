@@ -10,10 +10,16 @@ const Nav = () => {
     const isUserLoggedIn = false;
 
     const { data: session } = useSession();
-
+    const [providers, setProviders] = useState();
     const [dropDownMenu, setDropDownMenu] = useState(false);
 
-
+    useEffect(() => {
+        const getProvidersData = async () => {
+            const providers = await getProviders();
+            setProviders(providers);
+        }
+        getProvidersData();
+    })
     
     return (
         <nav className='flex-between w-full mb-16 pt-3'>
@@ -31,7 +37,7 @@ const Nav = () => {
 
             {/* Desktop */}
             <div className='sm:flex hidden'>
-                {isUserLoggedIn ?
+                {session?.user ?
                     (<div className='flex gap-3 md:gap-5'>
                         <Link href='/cart' className="black_btn">
                             Cart
@@ -39,11 +45,11 @@ const Nav = () => {
                         <button 
                             type='button' 
                             className='outline_btn'
-                            onClick={() => signOut()}>
+                            onClick={() => signOut({callbackUrl: 'http://localhost:3000'})}>
                             Sign Out
                         </button>
                         <Link href="/profile">
-                            <Image src="/images/profile.svg"
+                            <Image src={session?.user.image}
                                 alt="profile_pic"
                                 width={37}
                                 height={37}
@@ -68,10 +74,10 @@ const Nav = () => {
 
             {/*Mobile*/}
             <div className='sm:hidden flex relative'>
-                {isUserLoggedIn ? 
+                {session?.user ? 
                 (   <div className='flex gap-3 md:gap-5'>
                         <Image
-                            src="/images/profile.svg"
+                            src={session?.user.image}
                             alt="profile_pic"
                             width={37}
                             height={37}
@@ -88,8 +94,8 @@ const Nav = () => {
                                     type="button"
                                     className='mt-5 w-full black_btn'
                                     onClick={() => {
-                                        signOut();
                                         setDropDownMenu(false);
+                                        signOut({callbackUrl: 'http://localhost:3000'});
                                         }
                                     }
                                 >Sign Out</button>
