@@ -3,14 +3,18 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { signIn } from 'next-auth/react'
+import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 
 const Nav = () => {
     const isUserLoggedIn = false;
 
+    const { data: session } = useSession();
+
     const [dropDownMenu, setDropDownMenu] = useState(false);
 
+
+    
     return (
         <nav className='flex-between w-full mb-16 pt-3'>
             <Link href="/" className='flex gap-2 flex-center'>
@@ -32,7 +36,10 @@ const Nav = () => {
                         <Link href='/cart' className="black_btn">
                             Cart
                         </Link>
-                        <button type='button' className='outline_btn'>
+                        <button 
+                            type='button' 
+                            className='outline_btn'
+                            onClick={() => signOut()}>
                             Sign Out
                         </button>
                         <Link href="/profile">
@@ -80,7 +87,11 @@ const Nav = () => {
                                 <button
                                     type="button"
                                     className='mt-5 w-full black_btn'
-                                    onClick={() => setDropDownMenu(false)}
+                                    onClick={() => {
+                                        signOut();
+                                        setDropDownMenu(false);
+                                        }
+                                    }
                                 >Sign Out</button>
                             </div>
                         )}
