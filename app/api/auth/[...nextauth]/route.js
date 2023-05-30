@@ -9,7 +9,7 @@ const authOptions = {
         })
     ],
     pages : {
-        signIn : '/login'
+        
     }
 }
 
