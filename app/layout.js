@@ -3,7 +3,7 @@ import "@styles/global.css";
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 
-const metadata = {
+export const metadata = {
     title: "LooseScrews",
     desc: "For all your screwing needs!"
 }
