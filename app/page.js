@@ -1,19 +1,21 @@
-import Popular from "@components/Popular";
+import Image from "next/image";
 
 const Home = () => {
 	return (
 		<>
-			<div className="head_text">We don&apos;t <span className="orange_gradient">Screw</span> with you</div>
-			<div className="desc text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, deserunt, cumque sed modi tempore sint incidunt libero qui possimus autem quam quas accusantium eius deleniti magnam at perferendis iure quia.</div>
-
-			<div className="flex flex-wrap gap-x-4 gap-y-4">
-				<Popular prodName='Hammer' img='/images/img (1).jpg'></Popular>
-				<Popular prodName='Hammer' img='/images/img (2).jpg'></Popular>
-				<Popular prodName='Hammer' img='/images/img (3).jpg'></Popular>
-				<Popular prodName='Hammer' img='/images/img (4).jpg'></Popular>
-				<Popular prodName='Hammer' img='/images/img (5).jpg'></Popular>
+			<div className="flex rounded-[7rem] bg-[url('/images/hero.png')] w-full h-[400px] bg-no-repeat mb-5 bg-contain">
+				<div className="text-right w-full py-20 pr-10">
+					<div className="head_text">For all your<br/> <span className="hover:class:orange_gradient">hardware</span> needs</div>
+					<button className="font-inter border border-black text-center rounded-3xl py-1.5 px-5 bg-black hover:bg-white text-white hover:text-black transition-all mt-10 justify-center align-middle">Shop</button>
+				</div>
 			</div>
-		
+
+			<div className="flex rounded-[7rem] bg-[url('/images/hire.png')] bg-right w-full h-[400px] bg-no-repeat bg-contain">
+				<div className="text-left w-full py-20 pr-10">
+					<div className="head_text">Can't be<br/> <span className="hover:class:orange_gradient">bothered</span> ?</div>
+					<button className="font-inter border border-black text-center rounded-3xl py-1.5 px-5 bg-black hover:bg-white text-white hover:text-black transition-all mt-10 justify-center align-middle">Hire us</button>
+				</div>
+			</div>
 		</>
 	)
 }

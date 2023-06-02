@@ -5,7 +5,7 @@ const Popular = ({ prodName, img }) => {
 		<>
 			<div className="bg-blur-lg border border-gray-300 rounded-md w-fit h-fit p-5">
 				<Image
-					className="rounded-md"
+					className="rounded-md w-50 h-40 border border-slate-400"
 					src={img}
 					alt={prodName}
 					width={200}

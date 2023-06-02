@@ -13,16 +13,18 @@ const Nav = () => {
     const [providers, setProviders] = useState();
     const [dropDownMenu, setDropDownMenu] = useState(false);
 
+    
     useEffect(() => {
         const getProvidersData = async () => {
             const providers = await getProviders();
+            console.log(providers);
             setProviders(providers);
         }
         getProvidersData();
-    })
-    
+    },[]);
+
     return (
-        <nav className='flex-between w-full mb-16 pt-3'>
+        <nav className='flex-between w-full mb-16 pt-3 border-b border-slate-150 pb-3'>
             <Link href="/" className='flex gap-2 flex-center'>
                 <Image
                     src="/logo.svg"
