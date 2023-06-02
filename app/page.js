@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 const Home = () => {
 	return (
@@ -13,7 +13,7 @@ const Home = () => {
 			<div className="flex rounded-[7rem] bg-[url('/images/hire.png')] bg-right w-full h-[400px] bg-no-repeat bg-contain">
 				<div className="text-left w-full py-20 pr-10">
 					<div className="head_text">Can't be<br/> <span className="hover:class:orange_gradient">bothered</span> ?</div>
-					<button className="font-inter border border-black text-center rounded-3xl py-1.5 px-5 bg-black hover:bg-white text-white hover:text-black transition-all mt-10 justify-center align-middle">Hire us</button>
+					<button className="font-inter border border-black text-center rounded-3xl py-1.5 px-5 bg-black hover:bg-white text-white hover:text-black transition-all mt-10 justify-center align-middle">Hire Us</button>
 				</div>
 			</div>
 		</>
