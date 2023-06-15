@@ -7,7 +7,6 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 
 const Nav = () => {
-    const isUserLoggedIn = false;
 
     const { data: session } = useSession();
     const [providers, setProviders] = useState();
@@ -17,7 +16,7 @@ const Nav = () => {
     useEffect(() => {
         const getProvidersData = async () => {
             const providers = await getProviders();
-            console.log(providers);
+            // console.log(providers);
             setProviders(providers);
         }
         getProvidersData();

@@ -5,7 +5,8 @@ import Provider from "@components/Provider";
 
 export const metadata = {
     title: "LooseScrews",
-    desc: "For all your screwing needs!"
+    desc: "For all your screwing needs!",
+    favicon: "favicon.ico",
 }
 
 const layout = ({ children }) => {
