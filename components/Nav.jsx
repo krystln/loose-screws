@@ -8,7 +8,7 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 const Nav = () => {
 
-    const { data: session } = useSession();
+    const { data: session, status } = useSession();
     const [providers, setProviders] = useState();
     const [dropDownMenu, setDropDownMenu] = useState(false);
 
@@ -35,10 +35,9 @@ const Nav = () => {
                 <p className='logo_text'>LooseScrews</p>
             </Link>
 
-
             {/* Desktop */}
             <div className='sm:flex hidden'>
-                {session?.user ?
+                {status === "authenticated" ?
                     (<div className='flex gap-3 md:gap-5'>
                         <Link href='/cart' className="black_btn">
                             Cart

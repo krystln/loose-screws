@@ -8,7 +8,7 @@ import AccessDenied from "@components/AccessDenied";
 const Cart = () => {
 	const { data : session, loading } = useSession({
 		required: true,
-		onUnauthenticated() {
+		onAuthenticated() {
 			redirect('/api/auth/signin?callbackurl=/cart');
 		}
 	});
