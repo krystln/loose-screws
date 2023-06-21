@@ -1,4 +1,4 @@
-
+import Link from 'next/link';
 
 const Home = () => {
 	return (
@@ -13,7 +13,7 @@ const Home = () => {
 			<div className="flex rounded-r-[7rem] bg-[url('/images/hire.png')] bg-right w-full h-[400px] bg-no-repeat bg-cover">
 				<div className="text-left w-full py-20 pr-10">
 					<div className="head_text">Can&apos;t be<br/> <span className="hover:class:orange_gradient">bothered</span> ?</div>
-					<button className="font-inter border border-black text-center rounded-3xl py-1.5 px-5 bg-black hover:bg-white text-white hover:text-black transition-all mt-10 justify-center align-middle">Hire Us</button>
+					<Link href="/hireus"><button className="font-inter border border-black text-center rounded-3xl py-1.5 px-5 bg-black hover:bg-white text-white hover:text-black transition-all mt-10 justify-center align-middle">Hire Us</button></Link>
 				</div>
 			</div>
 		</>
