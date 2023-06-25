@@ -27,8 +27,23 @@ const AddPorduct = () => {
         })
     }
 
+    async function handleSubmit(event) {
+        event.preventDefault();
+        try {
+            const response = await fetch('/api/product', {
+                method: 'POST',
+                body: JSON.stringify({
+                    product
+                })
+            });
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 name="name"
@@ -117,7 +132,7 @@ const AddPorduct = () => {
                 }}
             />
 
-            <button>Submit</button>
+            <input type="submit" value="Submit"/>
 
         </form>
     )
