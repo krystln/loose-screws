@@ -18,7 +18,7 @@ const Profile = () => {
     </Link>
     : 
     test.map((item) =>{
-        return <div className="">{item.name}</div>
+        return <div key={item.name} className="">{item.name}</div>
     })
 
     return (
@@ -28,6 +28,7 @@ const Profile = () => {
                     src={session?.user.image}
                     width={200}
                     height={200}
+                    alt="Profile Picture"
                     className='object-contain rounded-full'
                 />
                 <div>

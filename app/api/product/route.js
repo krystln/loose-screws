@@ -1,4 +1,4 @@
-import connectToDB from "@utils/db";
+import { connectToDB } from "@utils/db";
 import Product from "@models/product";
 
 export const POST = async (request, response) => {

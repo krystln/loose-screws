@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image";
 
 const AddPorduct = () => {
 
@@ -110,7 +111,7 @@ const AddPorduct = () => {
 
             {selectedImage && (
                 <div>
-                    <img
+                    <Image
                         alt="not found"
                         width={"250px"}
                         src={URL.createObjectURL(selectedImage)}
