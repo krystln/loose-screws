@@ -1,13 +1,24 @@
 "use client"
 import Image from "next/image";
 import { useSession } from "next-auth/react";
+import { useState } from "react";
+import Link from "next/link";
 
 const Profile = () => {
 
     const { data: session } = useSession();
 
-    const CartItems = session?.user.cart.map((item) => {
-        return <div className="flex">{item.name}</div>
+    //const CartItems = session?.user.cart.map((item) => {
+    const test = [/*{name: "test"}, {name: "test2"}*/]
+    const CartItems = test.length === 0 ?  
+    <Link 
+        className="text-lg text-black max-w-fit"
+        href="/store">
+            Explore the Store
+    </Link>
+    : 
+    test.map((item) =>{
+        return <div className="">{item.name}</div>
     })
 
     return (
@@ -25,15 +36,22 @@ const Profile = () => {
                 </div>
             </div>
 
-            <div className="border-2 border-gray-400 rounded-md w-4/5 h-52">
-                <div className="mt-5 text-lg text-black max-w-fit sm:text-xl bg-white relative -top-9 ml-4 px-3  ">Your Cart</div>
-                {CartItems}
-                {(CartItems.count() === 0) ? <div>Explore the Store</div> : <div>Buy Items</div>}
+            <div className="border-2 border-gray-400 rounded-md w-4/5 h-48 my-5">
+                <div className="mt-5 text-lg text-black max-w-fit sm:text-xl bg-white relative -top-9 ml-4 px-3 ">Your Cart</div>
+                <div className="flex place-content-center">
+                    {CartItems}
+                </div>
+                {test.length != 0 && 
+                <button className="text-lg text-black bg-white max-w-fit relative bottom-0">
+                    Buy Items
+                </button>
+            }</div>
+
+
+            <div>Settings</div>
+            <div className="border-2 border-slate-500 rounded-md w-4/5 py-5">
+                <div>Personal</div>
             </div>
-
-
-
-
         </>
     )
 }
