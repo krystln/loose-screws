@@ -1,9 +1,11 @@
-
+import SignIn from "@components/form/SignIn";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <SignIn></SignIn>
+    </div>
+  );
+};
 
-export default page
+export default page;
